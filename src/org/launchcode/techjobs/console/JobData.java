@@ -22,6 +22,7 @@ public class JobData {
     private static Boolean isDataLoaded = false;
 
     private static ArrayList<HashMap<String, String>> allJobs;
+    public static ArrayList<HashMap<String, String>> clonedJobs = new ArrayList<>(allJobs);
 
     /**
      * Fetch list of all values from loaded data,
@@ -52,7 +53,7 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
-        return allJobs;
+        return clonedJobs;
     }
 
     /**
